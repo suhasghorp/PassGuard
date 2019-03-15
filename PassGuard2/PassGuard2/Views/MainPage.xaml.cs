@@ -32,6 +32,10 @@ namespace PassGuard2.Views
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
+                    case (int)MenuItemType.Logout:
+                        MenuPages.Add(id, new NavigationPage(new LogoutPage()));
+                        break;
+
                 }
             }
 

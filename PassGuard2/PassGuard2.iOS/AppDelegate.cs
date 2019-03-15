@@ -25,6 +25,9 @@ namespace PassGuard2.iOS
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
+            var x = typeof(Xamarin.Forms.Themes.LightThemeResources);
+            x = typeof(Xamarin.Forms.Themes.iOS.UnderlineEffect);
+
             return base.FinishedLaunching(app, options);
         }
     }

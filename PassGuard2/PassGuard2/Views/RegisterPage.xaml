@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PassGuard2.Views.RegisterPage" Title="Register" BackgroundColor="White">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+                
+        <Entry Grid.Row="0" 
+               Placeholder="Enter User name"
+               VerticalOptions="End" HorizontalOptions="StartAndExpand"
+               x:Name="entry_regUsername"
+               ></Entry>
+
+        <Entry Grid.Row="1" 
+               Placeholder="Enter Master Password"
+               VerticalOptions="Center" HorizontalOptions="StartAndExpand"
+               x:Name="entry_regPassword"
+               ></Entry>
+
+        <Entry Grid.Row="2" 
+               Placeholder="Re-enter Master Password"
+               VerticalOptions="Center" HorizontalOptions="StartAndExpand"
+               x:Name="entry_regPassword_again"
+               ></Entry>
+        
+        <Button Text="Register" 
+                StyleClass ="Primary" 
+                Grid.Row="3" 
+                VerticalOptions="EndAndExpand"
+                x:Name="RegisterButton" 
+                Clicked="RegisterButton_Clicked"></Button>
+
+    </Grid>
+</ContentPage>

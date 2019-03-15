@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PassGuard2.Views.LoginPage" BackgroundColor="White" NavigationPage.HasNavigationBar="false">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>            
+        </Grid.ColumnDefinitions>
+
+        <Image Source="padlock_512.png" 
+               Grid.Row="0" 
+               VerticalOptions="Center" HorizontalOptions="CenterAndExpand"
+               Style="{StaticResource SmallLogoImageStyle}"></Image>
+        
+        <Label Text="Pass Guard" 
+               Grid.Row="1" 
+               VerticalOptions="Center" HorizontalOptions="CenterAndExpand"
+               Style="{StaticResource TitleLabelStyle}"></Label>
+
+        <Entry Grid.Row="2" 
+               Placeholder="Enter user name" 
+               HorizontalOptions="StartAndExpand"
+               x:Name="entry_Username"
+               ></Entry>
+
+        <Entry Grid.Row="3" 
+               Placeholder="Enter master password" 
+               IsPassword="True"
+               HorizontalOptions="StartAndExpand"
+               x:Name="entry_Password"
+               ></Entry>
+        
+        <Label Grid.Row="4" 
+               VerticalOptions="Center" HorizontalOptions="Center"
+               StyleClass="Body" TextColor="Red"
+               Text="Please do not forget your Master Password. It cannot be recovered."></Label>
+        
+        <Button Text="Login" 
+                StyleClass ="Primary" 
+                Grid.Row="5" 
+                x:Name="LoginButton" 
+                Clicked="LoginButton_OnClicked"></Button>
+        
+        <Button Text="Register" 
+                StyleClass="Link"
+                Grid.Row="6"                 
+                x:Name="RegisterButton"
+                Clicked="RegisterButton_OnClicked"></Button>
+    </Grid>
+</ContentPage>

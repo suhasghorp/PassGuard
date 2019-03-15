@@ -1,14 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PassGuard2.App">
+             x:Class="PassGuard2.App"
+             xmlns:theme="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Light">
     <Application.Resources>
-        <ResourceDictionary>
-            <!--Global Styles-->
-            <Color x:Key="NavigationPrimary">#2196F3</Color>
-            <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
-                <Setter Property="BarTextColor" Value="White" />
+        <ResourceDictionary MergedWith="theme:LightThemeResources" >
+            <Style x:Key="SmallLogoImageStyle" TargetType="Image">
+                <Setter Property="HeightRequest" Value="100"></Setter>
+                <Setter Property="HorizontalOptions" Value="Center"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+                <Setter Property="Margin" Value="10"></Setter>
+            </Style>
+
+            <Style x:Key="TitleLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Large"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="HorizontalOptions" Value="Center"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

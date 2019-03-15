@@ -20,6 +20,9 @@ namespace PassGuard2.Droid
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+
+            var x = typeof(Xamarin.Forms.Themes.LightThemeResources);
+            x = typeof(Xamarin.Forms.Themes.Android.UnderlineEffect);
         }
     }
 }

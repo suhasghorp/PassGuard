@@ -8,13 +8,17 @@ namespace PassGuard2
 {
     public partial class App : Application
     {
-
+        public static bool IsUserLoggedIn = false;
         public App()
         {
             InitializeComponent();
-
-
-            MainPage = new MainPage();
+            IsUserLoggedIn = false;
+            // The root page of your application
+            if (IsUserLoggedIn)
+            {
+                MainPage = new NavigationPage(new MainPage());
+            }
+            else MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()

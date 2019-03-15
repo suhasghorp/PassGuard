@@ -7,7 +7,8 @@ namespace PassGuard2.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,
+        Logout
     }
     public class HomeMenuItem
     {
