@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using PassGuard2.Views;
+using PassGuard2.Services;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace PassGuard2
@@ -18,7 +19,18 @@ namespace PassGuard2
             {
                 MainPage = new NavigationPage(new MainPage());
             }
-            else MainPage = new NavigationPage(new LoginPage());
+            else
+            {
+                if (new RealmDBService().GetNumberOfUsers() == 0)
+                {
+                    MainPage = new NavigationPage(new RegisterPage());
+                }
+                else
+                {
+                    MainPage = new NavigationPage(new LoginPage());
+                }
+
+            }
         }
 
         protected override void OnStart()

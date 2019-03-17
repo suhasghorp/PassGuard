@@ -27,13 +27,15 @@ namespace PassGuard2.Views
                 switch (id)
                 {
                     case (int)MenuItemType.Browse:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                        MenuPages.Add(id, new NavigationPage(new RecordsPage()));
                         break;
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
                     case (int)MenuItemType.Logout:
                         MenuPages.Add(id, new NavigationPage(new LogoutPage()));
+                        //App.IsUserLoggedIn = false;
+                        //await Navigation.PushModalAsync(new LoginPage());
                         break;
 
                 }
@@ -50,6 +52,16 @@ namespace PassGuard2.Views
 
                 IsPresented = false;
             }
+            /*else if (newPage != null && Detail == newPage)
+            {
+                await new NavigationPage(Detail);
+                Detail = newPage;
+
+                if (Device.RuntimePlatform == Device.Android)
+                    await Task.Delay(100);
+
+                IsPresented = false;
+            }*/
         }
     }
 }

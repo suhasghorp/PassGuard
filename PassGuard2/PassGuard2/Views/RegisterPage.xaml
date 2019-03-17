@@ -1,41 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PassGuard2.Views.RegisterPage" Title="Register" BackgroundColor="White">
+             x:Class="PassGuard2.Views.RegisterPage" BackgroundColor="White" NavigationPage.HasNavigationBar="false">
 
     <Grid Margin="5">
         <Grid.RowDefinitions>
-            <RowDefinition Height="150"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-                
-        <Entry Grid.Row="0" 
-               Placeholder="Enter User name"
+        <Image Source="padlock_512.png" Aspect="AspectFit" 
+               Grid.Row="0" Style="Circle"
+               VerticalOptions="Center" HorizontalOptions="CenterAndExpand"
+               ></Image>
+
+        <Label Text="Pass Guard" 
+               Grid.Row="1" 
+               VerticalOptions="Center" HorizontalOptions="CenterAndExpand"
+               Style="{StaticResource TitleLabelStyle}"></Label>
+
+        <Label Text="Please register to use PassGuard." 
+               Grid.Row="2" 
+               VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="20"
+               StyleClass="Subheader" ></Label>
+
+        <Label Text="Master Password can not be recovered. Do not lose it." 
+               Grid.Row="3" LineBreakMode="WordWrap"
+               VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Margin="20"
+               StyleClass="Body" TextColor="Red"></Label>
+
+        <Entry Grid.Row="4" 
+               Placeholder="Enter User name" Margin="20"
                VerticalOptions="End" HorizontalOptions="StartAndExpand"
                x:Name="entry_regUsername"
                ></Entry>
 
-        <Entry Grid.Row="1" 
-               Placeholder="Enter Master Password"
+        <Entry Grid.Row="5" 
+               Placeholder="Enter Master Password" Margin="20"
                VerticalOptions="Center" HorizontalOptions="StartAndExpand"
                x:Name="entry_regPassword"
                ></Entry>
 
-        <Entry Grid.Row="2" 
-               Placeholder="Re-enter Master Password"
+        <Entry Grid.Row="6" 
+               Placeholder="Re-enter Master Password" Margin="20"
                VerticalOptions="Center" HorizontalOptions="StartAndExpand"
                x:Name="entry_regPassword_again"
                ></Entry>
         
         <Button Text="Register" 
                 StyleClass ="Primary" 
-                Grid.Row="3" 
+                Grid.Row="7" 
                 VerticalOptions="EndAndExpand"
                 x:Name="RegisterButton" 
                 Clicked="RegisterButton_Clicked"></Button>

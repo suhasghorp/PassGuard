@@ -6,10 +6,10 @@ namespace PassGuard2.Services
 {
     public interface IDataStore<T>
     {
-        Task<bool> AddItemAsync(T item);
-        Task<bool> UpdateItemAsync(T item);
-        Task<bool> DeleteItemAsync(string id);
-        Task<T> GetItemAsync(string id);
-        Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
+        Task<bool> AddRecordAsync(T record);
+        Task<bool> UpdateRecordAsync(T record);
+        Task<bool> DeleteRecordAsync(int id);
+        Task<T> GetRecordAsync(int id);
+        Task<IEnumerable<T>> GetRecordsAsync(bool forceRefresh = false);
     }
 }

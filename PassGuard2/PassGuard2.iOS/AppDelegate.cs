@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using KeyboardOverlap.Forms.Plugin.iOSUnified;
 using UIKit;
 
 namespace PassGuard2.iOS
@@ -24,7 +25,7 @@ namespace PassGuard2.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
+            KeyboardOverlapRenderer.Init();
             var x = typeof(Xamarin.Forms.Themes.LightThemeResources);
             x = typeof(Xamarin.Forms.Themes.iOS.UnderlineEffect);
 

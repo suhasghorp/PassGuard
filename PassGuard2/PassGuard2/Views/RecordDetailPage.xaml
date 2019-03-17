@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PassGuard2.Views.RecordDetailPage"
+             Title="{Binding Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Delete" Clicked="DeleteRecord_Clicked" IsDestructive="True">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="delete.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+
+    <StackLayout Spacing="5" Padding="5">
+       
+        <Label Text="Category" FontSize="Small" />
+        <Entry Text="{Binding Record.Category}" FontSize="Medium" />
+
+        <Label Text="Name" FontSize="Small" />
+        <Entry Text="{Binding Record.Name}" FontSize="Medium" />
+
+        <Label Text="URL" FontSize="Small" />
+        <Entry Text="{Binding Record.Url}" FontSize="Medium" />
+
+        <Label Text="Login" FontSize="Small" />
+        <Entry Text="{Binding Record.Login}" FontSize="Medium" />
+
+        <Label Text="Password" FontSize="Small" />
+        <Entry Text="{Binding Record.Password}" FontSize="Medium" />
+
+        <Label Text="Notes" FontSize="Small" HeightRequest="20"/>
+        <Editor Text="{Binding Record.Notes}" FontSize="Small" Margin="0" VerticalOptions="FillAndExpand" Keyboard="Chat" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" />
+
+    </StackLayout>
+</ContentPage>

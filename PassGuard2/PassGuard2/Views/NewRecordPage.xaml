@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PassGuard2.Views.NewRecordPage"
+             Title="New Record">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="cancel.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem x:Name="btnSave" Text="Save" Clicked="Save_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="save.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Spacing="5" Padding="15">
+            <Label Text="Category" FontSize="Small"/>
+            <Entry Text="{Binding Record.Category}" FontSize="Small" />
+
+            <Label Text="Name" FontSize="Small"/>
+            <Entry Text="{Binding Record.Name}" FontSize="Small" />
+
+            <Label Text="Website" FontSize="Small"/>
+            <Entry Text="{Binding Record.Url}" FontSize="Small" />
+
+            <Label Text="Login" FontSize="Small"/>
+            <Entry Text="{Binding Record.Login}" FontSize="Small" />
+
+            <Label Text="Password" FontSize="Small"/>
+            <Entry Text="{Binding Record.Password}" FontSize="Small" />
+            
+            <Editor Text="{Binding Record.Notes}" FontSize="Small" Margin="0" VerticalOptions="FillAndExpand" Keyboard="Chat" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" />
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

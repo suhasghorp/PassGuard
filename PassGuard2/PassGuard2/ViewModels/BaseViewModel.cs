@@ -12,7 +12,7 @@ namespace PassGuard2.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+        //public IDataStore<Record> DataStore => DependencyService.Get<IDataStore<Record>>();
 
         bool isBusy = false;
         public bool IsBusy

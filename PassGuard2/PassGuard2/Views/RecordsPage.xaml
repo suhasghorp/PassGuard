@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PassGuard2.Views.RecordsPage"
+              Title="{Binding Title}"
+             x:Name="BrowseRecordsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddRecord_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="add.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <SearchBar IsVisible="True"  Placeholder="Search records.." TextChanged="SearchBar_TextChanged" />
+
+        <ListView x:Name="RecordsListView"
+                ItemsSource="{Binding Records}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                RefreshCommand="{Binding LoadRecordsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RecycleElement"
+                ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <!--<ViewCell.ContextActions>
+                            <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
+                        </ViewCell.ContextActions>-->
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Name}" 
+                                LineBreakMode="NoWrap"
+                                   TextColor="RoyalBlue"
+                                Style="{DynamicResource ListItemTextStyle}"
+                                FontSize="16" />
+                            <Label Text="{Binding Url}" 
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemTextStyle}"
+                                FontSize="13" />
+                            <Label Text="{Binding Category}" 
+                                LineBreakMode="NoWrap" 
+                                TextColor="#f35e20"
+                                Style="{DynamicResource ListItemDetailTextStyle}" 
+                                FontSize="13" />
+                            
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

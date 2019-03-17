@@ -5,6 +5,7 @@
              xmlns:theme="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Light">
     <Application.Resources>
         <ResourceDictionary MergedWith="theme:LightThemeResources" >
+            
             <Style x:Key="SmallLogoImageStyle" TargetType="Image">
                 <Setter Property="HeightRequest" Value="100"></Setter>
                 <Setter Property="HorizontalOptions" Value="Center"></Setter>
@@ -14,6 +15,7 @@
 
             <Style x:Key="TitleLabelStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="Large"></Setter>
+                <Setter Property="TextColor" Value="RoyalBlue"></Setter>
                 <Setter Property="FontAttributes" Value="Bold"></Setter>
                 <Setter Property="HorizontalOptions" Value="Center"></Setter>
                 <Setter Property="VerticalOptions" Value="Center"></Setter>
