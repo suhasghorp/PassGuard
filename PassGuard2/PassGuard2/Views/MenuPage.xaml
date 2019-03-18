@@ -10,7 +10,7 @@
                 <DataTemplate>
                     <ViewCell>
                         <Grid Padding="10">
-                            <Label Text="{Binding Title}" FontSize="20"/>
+                            <Label Text="{Binding Title}" FontFamily="{StaticResource font_book}" TextColor="{StaticResource dark_blue}" FontSize="16"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

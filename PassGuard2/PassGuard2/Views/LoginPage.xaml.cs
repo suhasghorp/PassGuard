@@ -17,11 +17,10 @@ namespace PassGuard2.Views
 		public LoginPage ()
 		{
 			InitializeComponent ();
-            /*if (new RealmDBService().GetNumberOfUsers() > 0)
-            {
-                RegisterButton.SetValue(IsVisibleProperty, false);
-            }*/
-		}
+            entry_Username.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone);
+            entry_Password.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone);            
+
+        }
 
         private async void LoginButton_OnClicked(object sender, EventArgs e)
         {
@@ -46,7 +45,8 @@ namespace PassGuard2.Views
                 /*if (Device.iOS == Device.RuntimePlatform)
                 {
                     await Navigation.PopToRootAsync();
-                }*/
+                }
+                Application.Current.MainPage = new MainPage();*/
                 Application.Current.MainPage = new MainPage();
             }
             else
@@ -66,18 +66,6 @@ namespace PassGuard2.Views
                 return false;
             return true;
         }
-
-        private async void RegisterButton_OnClicked(object sender, EventArgs e)
-        {
-            if (new RealmDBService().GetNumberOfUsers() > 0)
-            {
-                var answer = await DisplayAlert("Register", "There is already a user registered on this device.\nAll Records for that user will be deleted.\nProceed?", "Yes", "No");
-                if (answer)
-                {
-                    await Navigation.PushAsync(new RegisterPage());
-                }
-            }
-            
-        }
+       
     }
 }

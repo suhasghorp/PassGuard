@@ -14,26 +14,46 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
 
+    <Grid x:Name="MainGrid">
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand" Padding="24" Spacing="0">
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <StackLayout x:Name="FormLayout" Spacing="8" VerticalOptions="CenterAndExpand">
 
-    <StackLayout Spacing="5" Padding="5">
-       
-        <Label Text="Category" FontSize="Small" />
-        <Entry Text="{Binding Record.Category}" FontSize="Medium" />
+                        <StackLayout Spacing="5">
+                            <Label Text="CATEGORY" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_blue}" FontSize="12" />
+                            <Entry x:Name="entry_category" Text="{Binding Record.Category}" />
+                        </StackLayout>
 
-        <Label Text="Name" FontSize="Small" />
-        <Entry Text="{Binding Record.Name}" FontSize="Medium" />
+                        <StackLayout Spacing="5">
+                            <Label Text="NAME" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_blue}" FontSize="12" />
+                            <Entry x:Name="entry_name" Text="{Binding Record.Name}" />
+                        </StackLayout>
 
-        <Label Text="URL" FontSize="Small" />
-        <Entry Text="{Binding Record.Url}" FontSize="Medium" />
+                        <StackLayout Spacing="5">
+                            <Label Text="WEBSITE" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_blue}" FontSize="12" />
+                            <Entry x:Name="entry_url" Text="{Binding Record.Url}" />
+                        </StackLayout>
 
-        <Label Text="Login" FontSize="Small" />
-        <Entry Text="{Binding Record.Login}" FontSize="Medium" />
+                        <StackLayout Spacing="5">
+                            <Label Text="LOGIN" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_blue}" FontSize="12" />
+                            <Entry x:Name="entry_login" Text="{Binding Record.Login}" />
+                        </StackLayout>
 
-        <Label Text="Password" FontSize="Small" />
-        <Entry Text="{Binding Record.Password}" FontSize="Medium" />
+                        <StackLayout Spacing="5">
+                            <Label Text="PASSWORD" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_blue}" FontSize="12" />
+                            <Entry x:Name="entry_password" Text="{Binding Record.Password}" />
+                        </StackLayout>
 
-        <Label Text="Notes" FontSize="Small" HeightRequest="20"/>
-        <Editor Text="{Binding Record.Notes}" FontSize="Small" Margin="0" VerticalOptions="FillAndExpand" Keyboard="Chat" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" />
+                        <StackLayout Spacing="5">
+                            <Label Text="NOTES" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_blue}" FontSize="12" />
+                            <Editor x:Name="entry_notes" Text="{Binding Record.Notes}" Margin="0" VerticalOptions="FillAndExpand" />
+                        </StackLayout>
 
-    </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+    
 </ContentPage>

@@ -16,13 +16,26 @@ namespace PassGuard2.Views
         public RecordDetailPage(RecordDetailViewModel viewModel)
         {
             InitializeComponent();
-
             BindingContext = this.viewModel = viewModel;
+
+            entry_category.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeWord);
+            entry_name.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeWord);
+            entry_url.Keyboard = Keyboard.Url;
+            entry_login.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone);
+            entry_password.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone);
+            entry_notes.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeWord);
         }
 
         public RecordDetailPage()
         {
             InitializeComponent();
+
+            entry_category.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeWord);
+            entry_name.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeWord);
+            entry_url.Keyboard = Keyboard.Url;
+            entry_login.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone);
+            entry_password.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone);
+            entry_notes.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeWord);
 
             var record = new Record
             {
@@ -36,6 +49,8 @@ namespace PassGuard2.Views
 
             viewModel = new RecordDetailViewModel(record);
             BindingContext = viewModel;
+
+            
         }
 
         async void DeleteRecord_Clicked(object sender, EventArgs args)

@@ -24,10 +24,18 @@ namespace PassGuard2.Views
                 Url = @"http://",
                 Login = string.Empty,
                 Password = string.Empty,
-                Notes = "Notes"
+                Notes = string.Empty
             };
 
             BindingContext = this;
+
+            entry_category.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeWord);
+            entry_name.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeWord);
+            entry_url.Keyboard = Keyboard.Url;
+            entry_login.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone);
+            entry_password.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone);
+            entry_notes.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeWord);
+
         }
 
         async void Save_Clicked(object sender, EventArgs e)
@@ -56,12 +64,12 @@ namespace PassGuard2.Views
 
 
             MessagingCenter.Send(this, "AddRecord", Record);
-            await Navigation.PopModalAsync();
+            await Navigation.PopAsync();
         }
 
         async void Cancel_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopModalAsync();
+            await Navigation.PopAsync();
         }
     }
 }

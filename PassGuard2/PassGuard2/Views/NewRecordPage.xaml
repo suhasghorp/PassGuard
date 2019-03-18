@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PassGuard2.Views.NewRecordPage"
-             Title="New Record">
+             Title="New Record"
+             
+             >
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked">
@@ -20,27 +22,48 @@
             </ToolbarItem.Icon>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-    
-    <ContentPage.Content>
-        <StackLayout Spacing="5" Padding="15">
-            <Label Text="Category" FontSize="Small"/>
-            <Entry Text="{Binding Record.Category}" FontSize="Small" />
 
-            <Label Text="Name" FontSize="Small"/>
-            <Entry Text="{Binding Record.Name}" FontSize="Small" />
 
-            <Label Text="Website" FontSize="Small"/>
-            <Entry Text="{Binding Record.Url}" FontSize="Small" />
+    <Grid x:Name="MainGrid">
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand" Padding="24" Spacing="0">
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <StackLayout x:Name="FormLayout" Spacing="8" VerticalOptions="CenterAndExpand">
 
-            <Label Text="Login" FontSize="Small"/>
-            <Entry Text="{Binding Record.Login}" FontSize="Small" />
+                        <StackLayout Spacing="5">
+                            <Label Text="CATEGORY" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_blue}" FontSize="12" />
+                            <Entry x:Name="entry_category" Text="{Binding Record.Category}" MaxLength="15"/>
+                        </StackLayout>
 
-            <Label Text="Password" FontSize="Small"/>
-            <Entry Text="{Binding Record.Password}" FontSize="Small" />
-            
-            <Editor Text="{Binding Record.Notes}" FontSize="Small" Margin="0" VerticalOptions="FillAndExpand" Keyboard="Chat" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" />
-            
-            
-        </StackLayout>
-    </ContentPage.Content>
+                        <StackLayout Spacing="5">
+                            <Label Text="NAME" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_blue}" FontSize="12" />
+                            <Entry x:Name="entry_name" Text="{Binding Record.Name}" MaxLength="15"/>
+                        </StackLayout>
+
+                        <StackLayout Spacing="5">
+                            <Label Text="WEBSITE" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_blue}" FontSize="12" />
+                            <Entry x:Name="entry_url" Text="{Binding Record.Url}" />
+                        </StackLayout>
+
+                        <StackLayout Spacing="5">
+                            <Label Text="LOGIN" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_blue}" FontSize="12" />
+                            <Entry x:Name="entry_login" Text="{Binding Record.Login}" MaxLength="15"/>
+                        </StackLayout>
+
+                        <StackLayout Spacing="5">
+                            <Label Text="PASSWORD" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_blue}" FontSize="12" />
+                            <Entry x:Name="entry_password" Text="{Binding Record.Password}" MaxLength="15"/>
+                        </StackLayout>
+
+                        <StackLayout Spacing="5">
+                            <Label Text="NOTES" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_blue}" FontSize="12" />
+                            <Editor x:Name="entry_notes" Text="{Binding Record.Notes}" Margin="0" VerticalOptions="FillAndExpand" IsSpellCheckEnabled="False" IsTextPredictionEnabled="False" />
+                        </StackLayout>
+
+                    </StackLayout>
+                </StackLayout>                
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
 </ContentPage>

@@ -23,11 +23,19 @@ namespace PassGuard2
             {
                 if (new RealmDBService().GetNumberOfUsers() == 0)
                 {
-                    MainPage = new NavigationPage(new RegisterPage());
+                    MainPage = new NavigationPage(new RegisterPage())
+                    {
+                        BarBackgroundColor = Color.FromHex("#301536"),
+                        BarTextColor = Color.White
+                    };
                 }
                 else
                 {
-                    MainPage = new NavigationPage(new LoginPage());
+                    MainPage = new NavigationPage(new LoginPage())
+                    {
+                        BarBackgroundColor = Color.FromHex("#301536"),
+                        BarTextColor = Color.White
+                    };
                 }
 
             }
@@ -40,12 +48,16 @@ namespace PassGuard2
 
         protected override void OnSleep()
         {
-            // Handle when your app sleeps
+            IsUserLoggedIn = false;
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnResume()
         {
             // Handle when your app resumes
+            IsUserLoggedIn = false;
         }
+
+        
     }
 }

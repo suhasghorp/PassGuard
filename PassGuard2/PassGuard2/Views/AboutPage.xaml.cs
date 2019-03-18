@@ -11,6 +11,7 @@ namespace PassGuard2.Views
         public AboutPage()
         {
             InitializeComponent();
+            
         }
     }
 }

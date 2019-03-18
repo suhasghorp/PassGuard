@@ -17,7 +17,11 @@ namespace PassGuard2.Views
 		public RegisterPage ()
 		{
 			InitializeComponent ();
-		}
+            entry_regUsername.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone);
+            entry_regPassword.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone);
+            entry_regPassword_again.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeNone);
+
+        }
 
         private async void RegisterButton_Clicked(object sender, EventArgs e)
         {
@@ -58,7 +62,7 @@ namespace PassGuard2.Views
             if (ret)
             {
                 await DisplayAlert("Register", "Registration Successful", "OK");
-                App.Current.MainPage = new LoginPage();
+                Application.Current.MainPage = new MainPage();
             }
             else
             {

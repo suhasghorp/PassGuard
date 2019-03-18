@@ -1,67 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PassGuard2.Views.RegisterPage" BackgroundColor="White" NavigationPage.HasNavigationBar="false">
+             x:Class="PassGuard2.Views.RegisterPage" BackgroundColor="{StaticResource dark_purple}" NavigationPage.BackButtonTitle="" NavigationPage.HasNavigationBar="false">
 
-    <Grid Margin="5">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="1*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+    <Grid x:Name="MainGrid">
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="FillAndExpand" Padding="24" Spacing="0">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Label x:Name="WelcomeLabel" Text="WELCOME TO" FontSize="16" FontFamily="{StaticResource font_medium}" TextColor="{StaticResource dark_yellow}" />
+                    <Label x:Name="PlokrLabel" Text="PLOKR" FontSize="48" FontFamily="{StaticResource font_heavy}" TextColor="#ffffff" />
+                    <!-- Place new controls here -->
+                    <Label x:Name="IntroLabel" Margin="0,24,0,16" FontSize="15" FontFamily="{StaticResource font_book}" TextColor="#ffffff" Text="This app lets you securely keep all your passwords in one place." />
 
-        <Image Source="padlock_512.png" Aspect="AspectFit" 
-               Grid.Row="0" Style="Circle"
-               VerticalOptions="Center" HorizontalOptions="CenterAndExpand"
-               ></Image>
+                    <StackLayout x:Name="FormLayout" Spacing="16" VerticalOptions="CenterAndExpand">
 
-        <Label Text="Pass Guard" 
-               Grid.Row="1" 
-               VerticalOptions="Center" HorizontalOptions="CenterAndExpand"
-               Style="{StaticResource TitleLabelStyle}"></Label>
+                        <StackLayout Spacing="8">
+                            <Label Text="ENTER USER NAME" FontFamily="{StaticResource font_medium}" FontSize="12" />
+                            <Entry x:Name="entry_regUsername" />
+                        </StackLayout>
 
-        <Label Text="Please register to use PassGuard." 
-               Grid.Row="2" 
-               VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="20"
-               StyleClass="Subheader" ></Label>
+                        <StackLayout Spacing="8">
+                            <Label Text="ENTER MASTER PASSWORD" FontFamily="{StaticResource font_medium}" FontSize="12" />
+                            <Entry x:Name="entry_regPassword" />
+                        </StackLayout>
 
-        <Label Text="Master Password can not be recovered. Do not lose it." 
-               Grid.Row="3" LineBreakMode="WordWrap"
-               VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Margin="20"
-               StyleClass="Body" TextColor="Red"></Label>
+                        <StackLayout Spacing="8">
+                            <Label Text="RE-ENTER MASTER PASSWORD" FontFamily="{StaticResource font_medium}" FontSize="12" />
+                            <Entry x:Name="entry_regPassword_again" />
+                        </StackLayout>
 
-        <Entry Grid.Row="4" 
-               Placeholder="Enter User name" Margin="20"
-               VerticalOptions="End" HorizontalOptions="StartAndExpand"
-               x:Name="entry_regUsername"
-               ></Entry>
-
-        <Entry Grid.Row="5" 
-               Placeholder="Enter Master Password" Margin="20"
-               VerticalOptions="Center" HorizontalOptions="StartAndExpand"
-               x:Name="entry_regPassword"
-               ></Entry>
-
-        <Entry Grid.Row="6" 
-               Placeholder="Re-enter Master Password" Margin="20"
-               VerticalOptions="Center" HorizontalOptions="StartAndExpand"
-               x:Name="entry_regPassword_again"
-               ></Entry>
-        
-        <Button Text="Register" 
-                StyleClass ="Primary" 
-                Grid.Row="7" 
-                VerticalOptions="EndAndExpand"
-                x:Name="RegisterButton" 
-                Clicked="RegisterButton_Clicked"></Button>
-
+                    </StackLayout>
+                </StackLayout>
+                <Button x:Name="RegisterButton" Clicked="RegisterButton_Clicked" VerticalOptions="EndAndExpand" Text="REGISTER" Margin="16" />
+            </StackLayout>
+        </ScrollView>
     </Grid>
+
 </ContentPage>

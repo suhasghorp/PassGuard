@@ -39,7 +39,8 @@ namespace PassGuard2.Views
 
         async void AddRecord_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new NewRecordPage()));
+            //await Navigation.PushModalAsync(new NavigationPage(new NewRecordPage()));
+            await Navigation.PushAsync(new NewRecordPage());
         }
 
         protected override void OnAppearing()
@@ -61,7 +62,7 @@ namespace PassGuard2.Views
 
             else
             {
-                RecordsListView.ItemsSource = viewModel.Records.Where(x => x.Name.StartsWith(e.NewTextValue));
+                RecordsListView.ItemsSource = viewModel.Records.Where(x => x.Name.ToUpper().StartsWith(e.NewTextValue.ToUpper()));
             }
         }
 
